@@ -1015,8 +1015,8 @@
       justify-content: center;
     }
     .mini-cta .btn {
-      padding: 10px 26px;
-      font-size: 0.66rem;
+      padding: 14px 32px;
+      font-size: 0.72rem;
     }
 
     /* ═══════════════════════════════════════
@@ -1642,11 +1642,11 @@
           </div>
           <div class="about-text reveal rd1">
             <h2 class="g-text">Обо мне</h2>
-            <div style="margin-bottom:24px">
-              <svg width="180" height="20" viewBox="0 0 180 20" fill="none">
-                <path d="M0,10 C14,3 30,18 50,10 S80,3 88,10" stroke="#c9a55a" stroke-width="0.8" opacity="0.4" fill="none"/>
-                <rect x="88" y="5" width="6" height="6" transform="rotate(45 91 8)" fill="rgba(201,165,90,0.45)" stroke="#c9a55a" stroke-width="0.7"/>
-                <path d="M94,10 C102,3 118,18 138,10 S164,3 180,10" stroke="#c9a55a" stroke-width="0.8" opacity="0.4" fill="none"/>
+            <div class="sec-ornament" style="margin-bottom:24px;justify-content:flex-start">
+              <svg width="280" height="24" viewBox="0 0 280 24" fill="none">
+                <path d="M0,12 C20,4 44,20 72,12 S116,4 136,12" stroke="#c9a55a" stroke-width="0.8" opacity="0.4" fill="none"/>
+                <rect x="136" y="6" width="8" height="8" transform="rotate(45 140 10)" fill="rgba(201,165,90,0.42)" stroke="#c9a55a" stroke-width="0.7"/>
+                <path d="M144,12 C164,4 188,20 216,12 S256,4 280,12" stroke="#c9a55a" stroke-width="0.8" opacity="0.4" fill="none"/>
               </svg>
             </div>
             <p>
@@ -1899,11 +1899,11 @@
         <div class="faq-wrap">
           <div class="faq-aside reveal">
             <h2 class="g-text">Часто задаваемые вопросы</h2>
-            <div style="margin-bottom:20px">
-              <svg width="160" height="18" viewBox="0 0 160 18" fill="none">
-                <path d="M0,9 C12,3 26,15 44,9 S68,3 78,9" stroke="#c9a55a" stroke-width="0.8" opacity="0.38" fill="none"/>
-                <rect x="78" y="4" width="6" height="6" transform="rotate(45 81 7)" fill="rgba(201,165,90,0.4)" stroke="#c9a55a" stroke-width="0.7"/>
-                <path d="M84,9 C94,3 108,15 126,9 S148,3 160,9" stroke="#c9a55a" stroke-width="0.8" opacity="0.38" fill="none"/>
+            <div class="sec-ornament" style="margin-bottom:20px;justify-content:flex-start">
+              <svg width="280" height="24" viewBox="0 0 280 24" fill="none">
+                <path d="M0,12 C20,4 44,20 72,12 S116,4 136,12" stroke="#c9a55a" stroke-width="0.8" opacity="0.4" fill="none"/>
+                <rect x="136" y="6" width="8" height="8" transform="rotate(45 140 10)" fill="rgba(201,165,90,0.42)" stroke="#c9a55a" stroke-width="0.7"/>
+                <path d="M144,12 C164,4 188,20 216,12 S256,4 280,12" stroke="#c9a55a" stroke-width="0.8" opacity="0.4" fill="none"/>
               </svg>
             </div>
             <p>Если у вас остались вопросы — напишите мне напрямую. Я отвечу на всё честно и без лишнего.</p>
@@ -1951,13 +1951,6 @@
         </div>
       </div>
     </section>
-    <div class="mini-cta reveal">
-      <div class="mini-cta-line"><span class="mini-cta-text">Остались вопросы? Я отвечу прямо сейчас</span></div>
-      <div class="mini-cta-btns">
-        <a class="btn btn-gold" href="https://wa.me/79609841827" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn btn-outline-p" href="https://t.me/+79609841827" target="_blank" rel="noopener">Telegram</a>
-      </div>
-    </div>
 
   </main>
 
@@ -1994,7 +1987,6 @@
        14. FOOTER
   ═══════════════════════════════════════ -->
   <footer>
-    <p class="ft-logo">Аделаида</p>
     <p class="ft-tagline">Конфиденциально · Онлайн · По фото</p>
     <p class="ft-copy">© 2025 Аделаида. Все консультации конфиденциальны.</p>
   </footer>
@@ -2227,11 +2219,10 @@
             '</div>';
           tc.querySelector('.tc-back').addEventListener('click', function() {
             if (tc.classList.contains('flipped')) return;
+            if (flippedCount > 0) return;
             tc.classList.add('flipped');
-            flippedCount++;
-            if (flippedCount === 1) {
-              setTimeout(function() { ctaEl.classList.add('show'); }, 600);
-            }
+            flippedCount = 1;
+            setTimeout(function() { ctaEl.classList.add('show'); }, 600);
           });
           cardsWrap.appendChild(tc);
         });
